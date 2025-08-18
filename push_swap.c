@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 18:55:47 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/18 22:52:14 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/18 23:00:59 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	main(int argc, char **argv)
 			if (!check_number(splited[i]))
 				return (printf("Error"));
 			t_stack	*node = ft_lstnew(ft_atol(splited[i]));
+			if (!check_equal(stack_a, node))
+				return (printf("Numero repetido"));
 			ft_lstadd_back(&stack_a, node);
 			i++;
 		}
