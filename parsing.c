@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 19:56:07 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/18 23:08:29 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/18 23:12:38 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ int	check_equal(t_stack *stack_a, t_stack *node)
 	return (1);
 }
 
-int	check_min_max(char *str)
+long	check_min_max(char *str)
 {
-	int	c;
+	long	c;
 
 	c = ft_atol(str);
 	if (c < INT_MIN || c > INT_MAX)
