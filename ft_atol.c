@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/14 18:56:43 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/18 19:31:26 by matmagal         ###   ########.fr       */
+/*   Created: 2025/08/18 18:43:26 by matmagal          #+#    #+#             */
+/*   Updated: 2025/08/18 19:12:53 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <limits.h>
-
-typedef struct s_stack
+long	ft_atol(const char *str)
 {
-	int				data;
-	struct s_stack	*next;
-}	t_stack;
+	long	i;
+	long	nb;
+	long	signal;
 
-t_stack	*ft_lstnew(int data);
-t_stack	*ft_lstlast(t_stack *lst);
-void	ft_lstadd_back(t_stack **lst, t_stack *new);
-char	**ft_split(const char *s, char c);
-long	ft_atol(const char *str);
-
-#endif
+	i = 0;
+	nb = 0;
+	signal = 1;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-')
+	{
+		signal *= -1;
+		i++;
+	}
+	else if (str[i] == '+')
+		i++;
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		nb = (nb * 10) + (str[i]) - 48;
+		i++;
+	}
+	return (nb * signal);
+}

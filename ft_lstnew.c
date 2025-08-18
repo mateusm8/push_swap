@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_utils_1.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/14 18:56:43 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/18 19:31:26 by matmagal         ###   ########.fr       */
+/*   Created: 2025/08/18 16:02:38 by matmagal          #+#    #+#             */
+/*   Updated: 2025/08/18 18:06:49 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <limits.h>
-
-typedef struct s_stack
+t_stack	*ft_lstnew(int data)
 {
-	int				data;
-	struct s_stack	*next;
-}	t_stack;
+	t_stack	*new_node;
 
-t_stack	*ft_lstnew(int data);
-t_stack	*ft_lstlast(t_stack *lst);
-void	ft_lstadd_back(t_stack **lst, t_stack *new);
-char	**ft_split(const char *s, char c);
-long	ft_atol(const char *str);
-
-#endif
+	new_node = (t_stack *) malloc(sizeof(t_stack));
+	if (!new_node)
+		return (NULL);
+	new_node->data = data;
+	new_node->next = NULL;
+	return (new_node);
+}

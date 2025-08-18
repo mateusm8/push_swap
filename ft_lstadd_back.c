@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/14 18:56:43 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/18 19:31:26 by matmagal         ###   ########.fr       */
+/*   Created: 2025/08/18 18:06:08 by matmagal          #+#    #+#             */
+/*   Updated: 2025/08/18 18:06:42 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <limits.h>
-
-typedef struct s_stack
+void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
-	int				data;
-	struct s_stack	*next;
-}	t_stack;
+	t_stack	*temp;
 
-t_stack	*ft_lstnew(int data);
-t_stack	*ft_lstlast(t_stack *lst);
-void	ft_lstadd_back(t_stack **lst, t_stack *new);
-char	**ft_split(const char *s, char c);
-long	ft_atol(const char *str);
-
-#endif
+	if (!lst || !new)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	temp = ft_lstlast(*lst);
+	temp->next = new;
+}
