@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 18:55:47 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/18 23:00:59 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/18 23:10:02 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(int argc, char **argv)
 		
 		while (splited[i])
 		{
-			if (!check_number(splited[i]))
+			if (!check_number(splited[i]) || check_min_max(splited[i]))
 				return (printf("Error"));
 			t_stack	*node = ft_lstnew(ft_atol(splited[i]));
 			if (!check_equal(stack_a, node))

@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 18:56:43 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/18 22:43:44 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/18 23:09:00 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ char	**ft_split(const char *s, char c);
 long	ft_atol(const char *str);
 int		check_number(char *str);
 int	check_equal(t_stack *stack_a, t_stack *node);
+int	check_min_max(char *str);
 
 #endif
