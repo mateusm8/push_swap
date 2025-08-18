@@ -6,7 +6,7 @@
 #    By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/14 19:02:38 by matmagal          #+#    #+#              #
-#    Updated: 2025/08/18 18:44:21 by matmagal         ###   ########.fr        #
+#    Updated: 2025/08/18 22:43:53 by matmagal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRCS = 	push_swap.c \
 		ft_lstlast.c \
 		ft_lstnew.c \
 		ft_split.c \
-		ft_atol.c
+		ft_atol.c \
+		parsing.c 
 
 OBJS = $(SRCS:.c=.o)
 RM = rm -f
