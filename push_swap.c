@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 18:55:47 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/18 23:11:33 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/20 21:26:14 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	main(int argc, char **argv)
 	int	i;
 	int	j = 1;
 	t_stack	*stack_a = NULL;
+	t_stack	*tmp;
+	// t_stack *stack_b = NULL;
 	
 	splited = NULL;
 	if (argc < 2)
@@ -39,10 +41,18 @@ int	main(int argc, char **argv)
 		}
 		j++;
 	}
+	tmp = stack_a;
+	while (tmp)
+	{
+		ft_printf("%d\n", tmp->data);
+		tmp = tmp->next;
+	}
+	printf("\n");
+	swap(stack_a);
 	while (stack_a)
-		{
-			printf("%d\n", stack_a->data);
-			stack_a = stack_a->next;
-		}
+	{
+		ft_printf("%d\n", stack_a->data);
+		stack_a = stack_a->next;	
+	}
 	return (0);
 }

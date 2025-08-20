@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 18:56:43 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/18 23:12:50 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/20 21:58:33 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <limits.h>
+# include <stdarg.h>
 
 typedef struct s_stack
 {
@@ -30,7 +31,20 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new);
 char	**ft_split(const char *s, char c);
 long	ft_atol(const char *str);
 int		check_number(char *str);
-int	check_equal(t_stack *stack_a, t_stack *node);
+int		check_equal(t_stack *stack_a, t_stack *node);
 long	check_min_max(char *str);
+int		ft_printnumber(int nb);
+int		ft_printaddress(unsigned long int nb);
+int		ft_printundec(unsigned int nb);
+int		ft_printhex(unsigned int nb, int s);
+int		ft_printstr(char *str);
+int		ft_printchar(char c);
+int		ft_type_check(char c, va_list *lst_args, unsigned long int num, int len);
+int		ft_printf(const char *format, ...);
+void	sa(t_stack *node);
+void	sb(t_stack *node);
+void	ss(t_stack *node1, t_stack *node2);
+void	pa(t_stack *a, t_stack *b);
+void	pb(t_stack *a, t_stack *b);
 
 #endif

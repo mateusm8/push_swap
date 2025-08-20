@@ -6,7 +6,7 @@
 #    By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/14 19:02:38 by matmagal          #+#    #+#              #
-#    Updated: 2025/08/18 22:43:53 by matmagal         ###   ########.fr        #
+#    Updated: 2025/08/20 21:58:55 by matmagal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,11 @@ SRCS = 	push_swap.c \
 		ft_lstnew.c \
 		ft_split.c \
 		ft_atol.c \
-		parsing.c 
+		parsing.c \
+		swap.c \
+		push.c \
+		ft_printf.c \
+		ft_printf_utilities.c 
 
 OBJS = $(SRCS:.c=.o)
 RM = rm -f
