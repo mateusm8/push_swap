@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 18:55:47 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/20 21:26:14 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/21 17:26:59 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 int	main(int argc, char **argv)
 {
 	char	**splited;
-	int	i;
-	int	j = 1;
+	int		i;
+	int		j = 1;
 	t_stack	*stack_a = NULL;
 	t_stack	*tmp;
 	// t_stack *stack_b = NULL;
-	
+
 	splited = NULL;
 	if (argc < 2)
 		return (0);
@@ -28,7 +28,6 @@ int	main(int argc, char **argv)
 	{
 		splited = ft_split(argv[j], ' ');
 		i = 0;
-		
 		while (splited[i])
 		{
 			if (!check_number(splited[i]) || !check_min_max(splited[i]))
@@ -48,7 +47,7 @@ int	main(int argc, char **argv)
 		tmp = tmp->next;
 	}
 	printf("\n");
-	swap(stack_a);
+	reverse_rotate(&stack_a);
 	while (stack_a)
 	{
 		ft_printf("%d\n", stack_a->data);

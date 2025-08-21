@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:18:46 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/20 21:23:08 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/21 17:29:05 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_printchar(char c)
 	return (len);
 }
 
-int	ft_type_check(char c, va_list *lst_args, unsigned long int num, int len)
+static int	ft_type_check(char c, va_list *lst_args, long int num, int len)
 {
 	if (c == 'c')
 		len += ft_printchar(va_arg(*lst_args, int));
@@ -36,7 +36,7 @@ int	ft_type_check(char c, va_list *lst_args, unsigned long int num, int len)
 		len += ft_printhex(va_arg(*lst_args, unsigned int), 2);
 	if (c == 'p')
 	{
-		num = va_arg(*lst_args, unsigned long int);
+		num = va_arg(*lst_args, long int);
 		if (!num)
 			return (ft_printstr("(nil)"));
 		len += write(1, "0x", 2);

@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 19:35:07 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/20 21:57:29 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/21 16:31:24 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ static void	swap(t_stack *node)
 void	sa(t_stack *node)
 {
 	swap(node);
-	ft_printf("sa");
+	ft_printf("sa\n");
 }
 
 void	sb(t_stack *node)
 {
 	swap(node);
-	ft_printf("sb");
+	ft_printf("sb\n");
 }
 
 void	ss(t_stack *node1, t_stack *node2)

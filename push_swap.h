@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 18:56:43 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/20 21:58:33 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/21 17:29:28 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,18 @@ int		ft_printundec(unsigned int nb);
 int		ft_printhex(unsigned int nb, int s);
 int		ft_printstr(char *str);
 int		ft_printchar(char c);
-int		ft_type_check(char c, va_list *lst_args, unsigned long int num, int len);
+int		ft_type_check(char c, va_list *lst_args, long int num, int len);
 int		ft_printf(const char *format, ...);
 void	sa(t_stack *node);
 void	sb(t_stack *node);
 void	ss(t_stack *node1, t_stack *node2);
 void	pa(t_stack *a, t_stack *b);
 void	pb(t_stack *a, t_stack *b);
+void	ra(t_stack *node);
+void	rb(t_stack *node);
+void	rr(t_stack *node1, t_stack *node2);
+void	rra(t_stack *node);
+void	rrb(t_stack *node);
+void	rrr(t_stack *node1, t_stack *node2);
 
 #endif
