@@ -1,55 +1,61 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   radix.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/18 19:56:07 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/26 18:46:50 by matmagal         ###   ########.fr       */
+/*   Created: 2025/08/26 20:49:08 by matmagal          #+#    #+#             */
+/*   Updated: 2025/08/26 22:41:53 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_number(char *str)
+void	ordenate_index(t_stack **node)
 {
-	int	i;
-
-	i = 0;
-	if (!str)
-		return (0);
-	if (str[i] == '+' || str[i] == '-')
-		i++;
-	while (str[i])
+	int		i;
+	t_stack	*tmp;
+	t_stack	*tmp2;
+	
+	tmp2 = (*node);
+	while (tmp2)
 	{
-		if (!(str[i] >= '0' && str[i] <= '9'))
-			return (0);
-		i++;
+		i = 0;
+		tmp = (*node);
+		while (tmp)
+		{
+			if (tmp2->data > tmp->data)
+				i++;
+			tmp = tmp->next;
+		}
+		tmp2->index = i;
+		tmp2 = tmp2->next;
 	}
-	return (1);
 }
 
-int	check_equal(t_stack *stack_a, t_stack *node)
+int	max_index_value(t_stack **node)
 {
+	int		i;
 	t_stack	*tmp;
 
-	tmp = stack_a;
+	tmp = (*node);
+	i = 0;
 	while (tmp)
 	{
-		if (tmp->data == node->data)
-			return (0);
+		if (tmp->index > i)
+			i = tmp->index;
 		tmp = tmp->next;
 	}
-	return (1);
+	return (i);
 }
 
-long	check_min_max(char *str)
+int	bit_check(int index)
 {
-	long	c;
-
-	c = ft_atol(str);
-	if (c < INT_MIN || c > INT_MAX)
-		return (0);
-	return (1);
+	int i;
+	
+	i = 0;
+	while ((index >> i) != 0)
+		i++;
+	return (i);
 }

@@ -6,7 +6,7 @@
 #    By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/14 19:02:38 by matmagal          #+#    #+#              #
-#    Updated: 2025/08/21 16:56:47 by matmagal         ###   ########.fr        #
+#    Updated: 2025/08/26 21:27:25 by matmagal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,9 @@ SRCS = 	push_swap.c \
 		rotate.c \
 		ft_printf.c \
 		ft_printf_utilities.c \
-		reverse_rotate.c
+		reverse_rotate.c \
+		ft_free.c \
+		radix.c \
 
 OBJS = $(SRCS:.c=.o)
 RM = rm -f
