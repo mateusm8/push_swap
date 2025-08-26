@@ -6,24 +6,24 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 16:41:45 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/26 16:27:34 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/26 17:14:35 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	reverse_rotate(t_stack **n)
+static void	reverse_rotate(t_stack **node)
 {
-	t_stack	*u;
-	t_stack	*a;
+	t_stack	*tmp;
+	t_stack	*tmp2;
 
-	a = (*n);
-	while (a->next->next)
-		a = a->next;
-	u = a->next;
-	a->next = NULL;
-	u->next = *n;
-	*n = u;
+	tmp2 = (*node);
+	while (tmp2->next->next)
+		tmp2 = tmp2->next;
+	tmp = tmp2->next;
+	tmp2->next = NULL;
+	tmp->next = *node;
+	*node = tmp;
 }
 
 void	rra(t_stack **n)
