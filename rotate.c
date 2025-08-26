@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 16:03:42 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/21 16:34:38 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/26 16:03:04 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 static void	rotate(t_stack	**node)
 {
 	t_stack	*tmp;
-	t_stack *tmp2;
-	
+	t_stack	*tmp2;
+
 	tmp = ft_lstlast(*node);
 	tmp2 = (*node)->next;
 	tmp->next = *node;

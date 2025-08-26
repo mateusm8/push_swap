@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils_1.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 16:02:38 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/18 18:06:49 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/26 16:01:20 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_stack	*ft_lstnew(int data)
 	if (!new_node)
 		return (NULL);
 	new_node->data = data;
+	new_node->index = NULL;
 	new_node->next = NULL;
 	return (new_node);
 }

@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 18:55:47 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/21 17:26:59 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/26 16:10:46 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,15 @@ int	main(int argc, char **argv)
 {
 	char	**splited;
 	int		i;
-	int		j = 1;
+	int		j;
 	t_stack	*stack_a = NULL;
-	t_stack	*tmp;
-	// t_stack *stack_b = NULL;
+	t_stack	*stack_b = NULL;
+	t_stack	*node;
 
 	splited = NULL;
 	if (argc < 2)
 		return (0);
+	j = 1;
 	while (argv[j])
 	{
 		splited = ft_split(argv[j], ' ');
@@ -32,7 +33,7 @@ int	main(int argc, char **argv)
 		{
 			if (!check_number(splited[i]) || !check_min_max(splited[i]))
 				return (printf("Error"));
-			t_stack	*node = ft_lstnew(ft_atol(splited[i]));
+			node = ft_lstnew(ft_atol(splited[i]));
 			if (!check_equal(stack_a, node))
 				return (printf("Numero repetido"));
 			ft_lstadd_back(&stack_a, node);
@@ -40,18 +41,11 @@ int	main(int argc, char **argv)
 		}
 		j++;
 	}
-	tmp = stack_a;
-	while (tmp)
-	{
-		ft_printf("%d\n", tmp->data);
-		tmp = tmp->next;
-	}
-	printf("\n");
 	reverse_rotate(&stack_a);
 	while (stack_a)
 	{
 		ft_printf("%d\n", stack_a->data);
-		stack_a = stack_a->next;	
+		stack_a = stack_a->next;
 	}
 	return (0);
 }
