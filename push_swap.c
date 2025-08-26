@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 18:55:47 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/26 16:10:46 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/26 16:25:32 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 	int		i;
 	int		j;
 	t_stack	*stack_a = NULL;
-	t_stack	*stack_b = NULL;
+	// t_stack	*stack_b = NULL;
 	t_stack	*node;
 
 	splited = NULL;
@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 		}
 		j++;
 	}
-	reverse_rotate(&stack_a);
+	rra(&stack_a);
 	while (stack_a)
 	{
 		ft_printf("%d\n", stack_a->data);
