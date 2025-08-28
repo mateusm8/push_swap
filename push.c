@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 21:41:00 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/21 16:31:32 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/27 19:40:44 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ static void	push(t_stack **node1, t_stack **node2)
 	*node1 = tmp;
 }
 
-void	pa(t_stack *a, t_stack *b)
+void	pa(t_stack **a, t_stack **b)
 {
-	push(&a, &b);
+	push(a, b);
 	ft_printf("pa\n");
 }
 
-void	pb(t_stack *a, t_stack *b)
+void	pb(t_stack **a, t_stack **b)
 {
-	push(&b, &a);
+	push(b, a);
 	ft_printf("pb\n");
 }

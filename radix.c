@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 20:49:08 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/26 22:41:53 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/27 20:18:51 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,31 @@ int	bit_check(int index)
 	while ((index >> i) != 0)
 		i++;
 	return (i);
+}
+
+void	radix_pass(t_stack **stack_a, t_stack **stack_b)
+{
+	int	max_bits;
+	int	i;
+	int	j;
+
+	i = 0;
+	ordenate_index(&stack_a);
+	max_bits = bit_check(max_index_value(&stack_a));
+	while (i < max_bits)
+	{
+		j = 0;
+		while (j < ft_lstsize(stack_a))
+		{
+			if (!(((*stack_a)->index >> i) & 1))
+				ra(&stack_a);
+			else
+				pb(stack_a, stack_b);
+			j++;
+		}
+		while (*stack_b)
+			pa(stack_a, stack_b);
+		i++;
+	}
+	
 }

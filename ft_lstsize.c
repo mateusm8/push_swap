@@ -1,53 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free.c                                          :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 18:47:06 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/27 17:08:26 by matmagal         ###   ########.fr       */
+/*   Created: 2025/04/18 20:34:41 by matmagal          #+#    #+#             */
+/*   Updated: 2025/08/27 19:32:47 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_list(t_stack **node)
-{
-	t_stack	*tmp;
-	t_stack	*next;
-
-	if (!node || !*node)
-		return ;
-	tmp = *node;
-	while (tmp)
-	{
-		next = tmp->next;
-		free(tmp);
-		tmp = next;
-	}
-	*node = NULL;
-}
-
-void	ft_free_str(char **str)
+int	ft_lstsize(t_stack *lst)
 {
 	int	i;
 
 	i = 0;
-	if (!str)
-		return ;
-	while (str[i])
+	while (lst)
 	{
-		free(str[i]);
+		lst = lst->next;
 		i++;
 	}
-	free(str);
-}
-
-int	ft_all(t_stack **stack, t_stack *node, char **str)
-{
-	free_list(stack);
-	ft_free_str(str);
-	free(node);
-	return (ft_printf("Error\n"));
+	return (i);
 }

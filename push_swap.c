@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 18:55:47 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/26 21:46:06 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/27 16:03:22 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 	int		i;
 	int		j;
 	t_stack	*stack_a = NULL;
-	// t_stack	*stack_b = NULL;
+	t_stack	*stack_b = NULL;
 	t_stack	*node;
 	t_stack *tmp;
 
