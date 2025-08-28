@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 18:55:47 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/27 16:03:22 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/28 22:07:01 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(int argc, char **argv)
 	t_stack	*stack_b = NULL;
 	t_stack	*node;
 	t_stack *tmp;
+	t_stack *teste;
 
 	splited = NULL;
 	if (argc < 2)
@@ -45,11 +46,18 @@ int	main(int argc, char **argv)
 		ft_free_str(splited);
 		j++;
 	}
-	tmp = stack_a;
 	ordenate_index(&stack_a);
+	tmp = stack_a;
+	teste = stack_a;
+	while (teste)
+	{
+		ft_printf("Valor do dado: %d Valor do indice: %d\n", teste->data, teste->index);
+		teste = teste->next;
+	}
+	radix_pass(&stack_a, &stack_b);
 	while (stack_a)
 	{
-		ft_printf("Valor do dado: %d\nValor do index: %d\n", stack_a->data, stack_a->index);
+		ft_printf("Valor do dado: %d Valor do indice: %d\n", stack_a->data, stack_a->index);
 		stack_a = stack_a->next;
 	}
 	free_list(&tmp);

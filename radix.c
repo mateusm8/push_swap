@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 20:49:08 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/27 20:18:51 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/28 22:11:47 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ordenate_index(t_stack **node)
 	}
 }
 
-int	max_index_value(t_stack **node)
+static int	max_index_value(t_stack **node)
 {
 	int		i;
 	t_stack	*tmp;
@@ -50,7 +50,7 @@ int	max_index_value(t_stack **node)
 	return (i);
 }
 
-int	bit_check(int index)
+static int	bit_check(int index)
 {
 	int i;
 	
@@ -65,19 +65,20 @@ void	radix_pass(t_stack **stack_a, t_stack **stack_b)
 	int	max_bits;
 	int	i;
 	int	j;
+	int	lst_size;
 
 	i = 0;
-	ordenate_index(&stack_a);
-	max_bits = bit_check(max_index_value(&stack_a));
+	lst_size = ft_lstsize(*stack_a);
+	max_bits = bit_check(max_index_value(stack_a));
 	while (i < max_bits)
 	{
 		j = 0;
-		while (j < ft_lstsize(stack_a))
+		while (j < lst_size)
 		{
 			if (!(((*stack_a)->index >> i) & 1))
-				ra(&stack_a);
-			else
 				pb(stack_a, stack_b);
+			else
+				ra(stack_a);
 			j++;
 		}
 		while (*stack_b)
