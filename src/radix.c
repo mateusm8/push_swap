@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 20:49:08 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/28 22:11:47 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/29 18:37:28 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ordenate_index(t_stack **node)
 	int		i;
 	t_stack	*tmp;
 	t_stack	*tmp2;
-	
+
 	tmp2 = (*node);
 	while (tmp2)
 	{
@@ -52,8 +52,8 @@ static int	max_index_value(t_stack **node)
 
 static int	bit_check(int index)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	while ((index >> i) != 0)
 		i++;
@@ -85,5 +85,4 @@ void	radix_pass(t_stack **stack_a, t_stack **stack_b)
 			pa(stack_a, stack_b);
 		i++;
 	}
-	
 }
