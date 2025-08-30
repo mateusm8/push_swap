@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 18:55:47 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/30 00:55:40 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/30 03:32:40 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,15 @@ int	main(int argc, char **argv)
 	if (argc > 2)
 	{
 		stack_a = push_swap(argv, stack_a, 0, 0);
-		ordenate_index(&stack_a);
-		radix_pass(&stack_a, &stack_b);
+		if (ordenate_checker(&stack_a))
+			return (free_list(&stack_a), 0);
+		if (argc > 2 && argc < 7)
+			hard_coding(&stack_a, &stack_b);
+		else
+		{
+			ordenate_index(&stack_a);
+			radix_pass(&stack_a, &stack_b);
+		}
 		if (stack_a)
 			free_list(&stack_a);
 		if (stack_b)

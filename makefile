@@ -6,7 +6,7 @@
 #    By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/14 19:02:38 by matmagal          #+#    #+#              #
-#    Updated: 2025/08/30 01:14:34 by matmagal         ###   ########.fr        #
+#    Updated: 2025/08/30 01:47:34 by matmagal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRCS = 	$(SRC_DIR)/push_swap.c \
 		$(SRC_DIR)/ft_free.c \
 		$(SRC_DIR)/radix.c \
 		$(SRC_DIR)/ft_lstsize.c \
+		$(SRC_DIR)/hard_coding.c \
 
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 RM = rm -f

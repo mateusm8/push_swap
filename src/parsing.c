@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 19:56:07 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/26 18:46:50 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/30 03:17:15 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,43 @@ long	check_min_max(char *str)
 	if (c < INT_MIN || c > INT_MAX)
 		return (0);
 	return (1);
+}
+
+int	ordenate_checker(t_stack **stack_a)
+{
+	t_stack	*tmp;
+
+	tmp = *stack_a;
+	while (tmp && tmp->next)
+	{
+		if (tmp->data < tmp->next->data)
+			tmp = tmp->next;
+		else
+			return (0);
+	}
+	return (1);
+}
+
+int	min_data_position(t_stack **stack_a)
+{
+	int		i;
+	int		min;
+	int		pos;
+	t_stack	*tmp;
+
+	i = 1;
+	pos = 1;
+	tmp = (*stack_a);
+	min = tmp->data;
+	while (tmp)
+	{
+		if (tmp->data < min)
+		{
+			min = tmp->data;
+			pos = i;
+		}
+		tmp = tmp->next;
+		i++;
+	}
+	return (pos);
 }
