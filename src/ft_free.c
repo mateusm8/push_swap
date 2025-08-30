@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 18:47:06 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/29 22:36:14 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/30 03:38:29 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_free_str(char **str)
 	free(str);
 }
 
-int	ft_all(t_stack **stack, t_stack *node, char **str)
+void	ft_all(t_stack **stack, t_stack *node, char **str)
 {
 	if (stack && *stack)
 		free_list(stack);
@@ -53,5 +53,5 @@ int	ft_all(t_stack **stack, t_stack *node, char **str)
 	if (node)
 		free(node);
 	write(2, "Error\n", 6);
-	return (0);
+	exit (0);
 }
