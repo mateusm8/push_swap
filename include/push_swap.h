@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 18:56:43 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/29 22:33:18 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/30 01:16:19 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <limits.h>
 # include <stdarg.h>
+# include "ft_printf.h"
 
 typedef struct s_stack
 {
@@ -35,13 +36,6 @@ long	ft_atol(const char *str);
 int		check_number(char *str);
 int		check_equal(t_stack *stack_a, t_stack *node);
 long	check_min_max(char *str);
-int		ft_printnumber(int nb);
-int		ft_printaddress(unsigned long int nb);
-int		ft_printundec(unsigned int nb);
-int		ft_printhex(unsigned int nb, int s);
-int		ft_printstr(char *str);
-int		ft_printchar(char c);
-int		ft_printf(const char *format, ...);
 void	sa(t_stack *node);
 void	sb(t_stack *node);
 void	ss(t_stack *node1, t_stack *node2);

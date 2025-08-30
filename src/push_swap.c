@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 18:55:47 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/29 22:35:21 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/30 00:55:40 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ static t_stack	*stack_fill(char *number, t_stack *stack_a)
 
 	node = NULL;
 	if (!check_number(number) || !check_min_max(number))
-		{
-			return (ft_all(&stack_a, NULL, NULL), NULL);
-		}
+		return (ft_all(&stack_a, NULL, NULL), NULL);
 	node = ft_lstnew(ft_atol(number));
 	if (!node)
 		return (free(node), NULL);
