@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 18:56:43 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/30 03:42:38 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/31 12:14:57 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	rr(t_stack **node1, t_stack **node2);
 void	rrr(t_stack **node1, t_stack **node2);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
 void	radix_pass(t_stack **stack_a, t_stack **stack_b);
-void	hard_coding(t_stack **stack_a, t_stack **stack_b);
+void	sort(t_stack **stack_a, t_stack **stack_b);
 void	ft_all(t_stack **stack, t_stack *node, char **str);
 
 #endif

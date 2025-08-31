@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 18:55:47 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/30 03:48:28 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/31 12:15:10 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	main(int argc, char **argv)
 		if (ordenate_checker(&stack_a))
 			return (free_list(&stack_a), 0);
 		if (argc > 2 && argc < 7)
-			hard_coding(&stack_a, &stack_b);
+			sort(&stack_a, &stack_b);
 		else
 		{
 			ordenate_index(&stack_a);

@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 01:23:14 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/30 03:29:29 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/31 12:14:45 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ static void	sort_five(t_stack **stack_a, t_stack **stack_b)
 	pa(stack_a, stack_b);
 }
 
-void	hard_coding(t_stack **stack_a, t_stack **stack_b)
+void	sort(t_stack **stack_a, t_stack **stack_b)
 {
 	if (ft_lstsize(*stack_a) == 2)
 		sort_two(stack_a);
