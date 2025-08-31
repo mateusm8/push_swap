@@ -6,7 +6,7 @@
 #    By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/14 19:02:38 by matmagal          #+#    #+#              #
-#    Updated: 2025/08/31 12:15:26 by matmagal         ###   ########.fr        #
+#    Updated: 2025/08/31 19:12:13 by matmagal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ $(NAME): $(OBJS) $(PRINTF)
 	@$(CC) $(CFLAGS) $(OBJS) $(PRINTF) -o $(NAME)
 	
 $(PRINTF):
-	@make -C $(PRINTF_DIR)
+	@$(MAKE) -s -C $(PRINTF_DIR)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -55,11 +55,11 @@ $(OBJ_DIR):
 
 clean:
 	@$(RM) $(OBJS)
-	@make -C $(PRINTF_DIR) clean
+	@$(MAKE) -s -C $(PRINTF_DIR) clean
 
 fclean: clean
 	@$(RM) $(NAME)
-	@make -C $(PRINTF_DIR) fclean
+	@$(MAKE) -s -C $(PRINTF_DIR) fclean
 
 re: fclean all
 
