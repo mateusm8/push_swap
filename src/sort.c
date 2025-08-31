@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hard_coding.c                                      :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 01:23:14 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/31 12:14:45 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/31 19:18:42 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static void	sort_three(t_stack **stack_a)
 	a = (*stack_a)->data;
 	b = (*stack_a)->next->data;
 	c = (*stack_a)->next->next->data;
-
 	if (a > b && b < c && a < c)
 		sa(*stack_a);
 	else if (a > b && b > c && a > c)
