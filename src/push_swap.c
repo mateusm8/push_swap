@@ -6,31 +6,34 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 18:55:47 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/31 12:15:10 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/08/31 18:37:22 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	stack_fill(char *number, t_stack **stack_a)
+void	stack_fill(char **number, t_stack **stack_a)
 {
 	t_stack	*node;
+	int		i;
 
 	node = NULL;
-	if (!check_number(number) || !check_min_max(number))
-		ft_all(stack_a, NULL, NULL);
-	node = ft_lstnew(ft_atol(number));
-	if (!node)
+	i = 0;
+	while (number[i])
 	{
-		free(node);
-		return ;
+		if (!check_number(number[i]) || !check_min_max(number[i]))
+			ft_all(stack_a, NULL, number);
+		node = ft_lstnew(ft_atol(number[i]));
+		if (!node)
+			ft_all(stack_a, node, number);
+		if (!check_equal(*stack_a, node))
+			ft_all(stack_a, node, number);
+		ft_lstadd_back(stack_a, node);
+		i++;
 	}
-	if (!check_equal(*stack_a, node))
-		ft_all(stack_a, NULL, NULL);
-	ft_lstadd_back(stack_a, node);
 }
 
-void	push_swap(char **args, t_stack **stack_a, int i, int j)
+void	push_swap(char **args, t_stack **stack_a, int j)
 {
 	char	**splited;
 
@@ -41,12 +44,7 @@ void	push_swap(char **args, t_stack **stack_a, int i, int j)
 		splited = ft_split(args[j], ' ');
 		if (!splited)
 			ft_all(stack_a, NULL, splited);
-		i = 0;
-		while (splited[i])
-		{
-			stack_fill(splited[i], stack_a);
-			i++;
-		}
+		stack_fill(splited, stack_a);
 		ft_free_str(splited);
 		j++;
 	}
@@ -54,14 +52,12 @@ void	push_swap(char **args, t_stack **stack_a, int i, int j)
 
 int	main(int argc, char **argv)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	static t_stack	*stack_a;
+	static t_stack	*stack_b;
 
-	stack_a = NULL;
-	stack_b = NULL;
 	if (argc > 2)
 	{
-		push_swap(argv, &stack_a, 0, 0);
+		push_swap(argv, &stack_a, 0);
 		if (ordenate_checker(&stack_a))
 			return (free_list(&stack_a), 0);
 		if (argc > 2 && argc < 7)
@@ -76,5 +72,7 @@ int	main(int argc, char **argv)
 		if (stack_b)
 			free_list(&stack_b);
 	}
+	if (argc == 2 && (!check_number(argv[1]) || !check_min_max(argv[1])))
+		ft_all(&stack_a, NULL, NULL);
 	return (0);
 }
