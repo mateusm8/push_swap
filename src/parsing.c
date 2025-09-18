@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 19:56:07 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/30 03:17:15 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/09/18 19:49:18 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	check_number(char *str)
 	i = 0;
 	if (!str)
 		return (0);
-	if (str[i] == '+' || str[i] == '-')
+	if ((str[i] == '+' || str[i] == '-') && str[i + 1])
 		i++;
 	while (str[i])
 	{

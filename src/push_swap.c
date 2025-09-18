@@ -6,11 +6,25 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 18:55:47 by matmagal          #+#    #+#             */
-/*   Updated: 2025/08/31 18:37:22 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/09/18 20:15:23 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static int	tab_space_check(char *arg)
+{
+	int	i;
+
+	i = 0;
+	while (arg[i])
+	{
+		if (arg[i] != ' ' && arg[i] != '\t')
+			return (1);
+		i++;
+	}
+	return (0);
+}
 
 void	stack_fill(char **number, t_stack **stack_a)
 {
@@ -41,6 +55,8 @@ void	push_swap(char **args, t_stack **stack_a, int j)
 	j = 1;
 	while (args[j])
 	{
+		if (args[j][0] == '\0' || !tab_space_check(args[j]))
+			ft_all(stack_a, NULL, NULL);
 		splited = ft_split(args[j], ' ');
 		if (!splited)
 			ft_all(stack_a, NULL, splited);
@@ -55,13 +71,16 @@ int	main(int argc, char **argv)
 	static t_stack	*stack_a;
 	static t_stack	*stack_b;
 
-	if (argc > 2)
+	if (argc > 1)
 	{
 		push_swap(argv, &stack_a, 0);
 		if (ordenate_checker(&stack_a))
 			return (free_list(&stack_a), 0);
-		if (argc > 2 && argc < 7)
+		if (ft_lstsize(stack_a) > 1 && ft_lstsize(stack_a) < 6)
 			sort(&stack_a, &stack_b);
+		else if (ft_lstsize(stack_a) == 1
+			&& (!check_number(argv[1]) || !check_min_max(argv[1])))
+			ft_all(&stack_a, NULL, NULL);
 		else
 		{
 			ordenate_index(&stack_a);
@@ -72,7 +91,5 @@ int	main(int argc, char **argv)
 		if (stack_b)
 			free_list(&stack_b);
 	}
-	if (argc == 2 && (!check_number(argv[1]) || !check_min_max(argv[1])))
-		ft_all(&stack_a, NULL, NULL);
 	return (0);
 }
