@@ -6,7 +6,7 @@
 /*   By: matmagal <matmagal@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 18:55:47 by matmagal          #+#    #+#             */
-/*   Updated: 2025/09/21 15:41:37 by matmagal         ###   ########.fr       */
+/*   Updated: 2025/09/26 22:38:33 by matmagal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,10 @@ void	stack_fill(char **number, t_stack **stack_a)
 	}
 }
 
-void	push_swap(char **args, t_stack **stack_a, int j)
+void	push_swap(char **args, t_stack **stack_a)
 {
 	char	**splited;
+	int		j;
 
 	splited = NULL;
 	j = 1;
@@ -73,7 +74,7 @@ int	main(int argc, char **argv)
 
 	if (argc > 1)
 	{
-		push_swap(argv, &stack_a, 0);
+		push_swap(argv, &stack_a);
 		if (ordenate_checker(&stack_a))
 			return (free_list(&stack_a), 0);
 		if (ft_lstsize(stack_a) > 1 && ft_lstsize(stack_a) < 6)
